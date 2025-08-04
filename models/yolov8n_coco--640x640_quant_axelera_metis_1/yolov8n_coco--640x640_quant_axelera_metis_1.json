@@ -1,0 +1,32 @@
+{
+    "ConfigVersion": 11,
+    "Checksum": "e75bf9aebc3310424614640e3d4311bbe6fbdbfbf0aff21df60fe06efd4f1e0d",
+    "DEVICE": [
+        {
+            "DeviceType": "METIS",
+            "RuntimeAgent": "AXELERA",
+            "SupportedDeviceTypes": "AXELERA/METIS"
+        }
+    ],
+    "PRE_PROCESS": [
+        {
+            "InputN": 1,
+            "InputH": 640,
+            "InputW": 640,
+            "InputC": 3,
+            "InputQuantEn": true
+        }
+    ],
+    "MODEL_PARAMETERS": [
+        {
+            "ModelPath": "model_yolov8n_coco.json"
+        }
+    ],
+    "POST_PROCESS": [
+        {
+            "OutputPostprocessType": "DetectionYoloV8",
+            "OutputNumClasses": 80,
+            "LabelsPath": "labels_yolov8n_coco.json"
+        }
+    ]
+}

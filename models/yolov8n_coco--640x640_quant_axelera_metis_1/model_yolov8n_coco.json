@@ -1,0 +1,154 @@
+{
+  "name": "kernel_function",
+  "type": "default",
+  "version": 2,
+  "generation": "omega",
+  "memory_pools": [
+    {
+      "name": "pool_ddr_const",
+      "size": 18886656,
+      "alignment": 64,
+      "memory": "ddr",
+      "depth": 1,
+      "blob_file": "pool_ddr_const.bin"
+    },
+    {
+      "name": "pool_ddr_input",
+      "size": 1684608,
+      "alignment": 64,
+      "memory": "ddr",
+      "depth": 2
+    },
+    {
+      "name": "pool_ddr_output",
+      "size": 1612800,
+      "alignment": 64,
+      "memory": "ddr",
+      "depth": 2
+    },
+    {
+      "name": "pool_l2",
+      "size": 6553600,
+      "alignment": 64,
+      "memory": "l2",
+      "depth": 1
+    },
+    {
+      "name": "pool_l2_const",
+      "size": 676352,
+      "alignment": 64,
+      "memory": "l2",
+      "depth": 1,
+      "blob_file": "pool_l2_const.bin"
+    }
+  ],
+  "inputs": [
+    {
+      "name": "var_input_ifd0",
+      "memory_pool": "pool_ddr_input",
+      "offset": 0,
+      "size": 1684608,
+      "shape": [
+        1,
+        642,
+        656,
+        4
+      ],
+      "dtype": "int8"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "output_mmio_var",
+      "memory_pool": "pool_ddr_output",
+      "offset": 0,
+      "size": 409600,
+      "shape": [
+        1,
+        80,
+        80,
+        64
+      ],
+      "dtype": "int8"
+    },
+    {
+      "name": "output_mmio_var_1",
+      "memory_pool": "pool_ddr_output",
+      "offset": 1228800,
+      "size": 102400,
+      "shape": [
+        1,
+        40,
+        40,
+        64
+      ],
+      "dtype": "int8"
+    },
+    {
+      "name": "output_mmio_var_2",
+      "memory_pool": "pool_ddr_output",
+      "offset": 1536000,
+      "size": 25600,
+      "shape": [
+        1,
+        20,
+        20,
+        64
+      ],
+      "dtype": "int8"
+    },
+    {
+      "name": "output_mmio_var_3",
+      "memory_pool": "pool_ddr_output",
+      "offset": 409600,
+      "size": 819200,
+      "shape": [
+        1,
+        80,
+        80,
+        128
+      ],
+      "dtype": "int8"
+    },
+    {
+      "name": "output_mmio_var_4",
+      "memory_pool": "pool_ddr_output",
+      "offset": 1331200,
+      "size": 204800,
+      "shape": [
+        1,
+        40,
+        40,
+        128
+      ],
+      "dtype": "int8"
+    },
+    {
+      "name": "output_mmio_var_5",
+      "memory_pool": "pool_ddr_output",
+      "offset": 1561600,
+      "size": 51200,
+      "shape": [
+        1,
+        20,
+        20,
+        128
+      ],
+      "dtype": "int8"
+    }
+  ],
+  "kernels": [
+    {
+      "name": "kernel_function",
+      "arguments": [
+        "pool_ddr_const",
+        "pool_ddr_input",
+        "pool_ddr_output",
+        "pool_l2",
+        "pool_l2_const"
+      ],
+      "pipeline_stage": 0,
+      "source_file": "kernel_function.c"
+    }
+  ]
+}
